@@ -1,0 +1,47 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	// This defines what 1 rem is. It is equal to 10px
+	font-size: 62.5%;
+
+	@include respond(tab-land) {
+		// 9px width < 1200?
+		font-size: 56.25%;
+	}
+
+	@include respond(tab-port) {
+		// 8px width < 900?
+		font-size: 50%;
+	}
+
+	@include respond(big-desktop) {
+		// 12px
+		font-size: 75%;
+	}
+}
+
+body {
+	box-sizing: border-box;
+	padding: 3rem;
+
+	@include respond(tab-land) {
+		font-size: 70%;
+		padding: 0;
+	}
+
+	@include respond(tab-port) {
+		font-size: 50%;
+		padding: 0;
+	}
+}
+
+::selection {
+	background-color: $color-primary;
+	color: $color-white;
+}
